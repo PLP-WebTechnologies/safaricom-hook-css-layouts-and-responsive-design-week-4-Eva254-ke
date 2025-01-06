@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: all 0.3s ease; /* Bonus: Add transitions */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    opacity: 0; /* For fade-in effect */
+    transform: translateY(-20px); /* For fade-in effect */
+    animation: fadeIn 1s forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transition for hover effect */
+}
+
+.nav-menu a:hover {
+    color: #007BFF; /* Change to your desired hover color */
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    opacity: 0; /* For slide-in effect */
+    transform: translateY(20px); /* For slide-in effect */
+    animation: slideIn 1s forwards 0.5s; /* Slide-in animation with delay */
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-column {
+    padding: 20px;
+}
+
+.image-column img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-media a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    header, footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 1025px) {
+    /* Large screens styles can be added here */
+}
